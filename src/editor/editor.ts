@@ -11,7 +11,7 @@ import './predefined-group-editor';
 import './artwork-overrides-editor';
 import './artwork-override-editor';
 import './form';
-import { isMassCard, isSonosCard } from '../utils/utils';
+// import { isMassCard, isSonosCard } from '../utils/utils';
 
 const { GENERAL, ENTITIES, ADVANCED, ARTWORK } = ConfigArea;
 class CardEditor extends BaseEditor {
@@ -20,7 +20,7 @@ class CardEditor extends BaseEditor {
   protected render(): TemplateResult {
     if (!this.config.sections || this.config.sections.length === 0) {
       this.config.sections = [Section.PLAYER, Section.VOLUMES, Section.GROUPS, Section.GROUPING, Section.MEDIA_BROWSER];
-      if (isSonosCard(this.config) || isMassCard(this.config)) {
+      if (true) {
         this.config.sections.push(Section.QUEUE);
       }
     }
