@@ -73,7 +73,7 @@ export default class HassService {
   async getQueue(mediaPlayer: MediaPlayer): Promise<MediaPlayerItem[]> {
     try {
       const ret = await this.hass.callWS<GetQueueResponse>({
-        type: 'call_service',
+        type: 'call_sdervice',
         domain: 'script',
         service: 'get_player_queues',
         target: {
@@ -81,8 +81,8 @@ export default class HassService {
         },
         return_response: true,
       });
-      console.log(JSON.stringify(ret))
-      const queueItems = ret.response[mediaPlayer.id];
+      console.log(JSON.stringify(ret.result.response))
+      const queueItems = ret.result.response[mediaPlayer.id];
       return queueItems.map((item) => {
         return {
           title: `${item.media_artist} - ${item.media_title}`,
