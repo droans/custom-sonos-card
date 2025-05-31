@@ -2,7 +2,7 @@ import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import { CardConfig, Section } from '../types';
 import './section-button';
-import { isSonosCard } from '../utils/utils';
+import { isSonosCard, isMassCard } from '../utils/utils';
 
 const { GROUPING, GROUPS, MEDIA_BROWSER, PLAYER, VOLUMES, QUEUE } = Section;
 
@@ -20,7 +20,7 @@ class Footer extends LitElement {
       [QUEUE, icons?.queue ?? 'mdi:queue-first-in-last-out'],
       [VOLUMES, icons?.volumes ?? 'mdi:tune'],
     ];
-    if (!isSonosCard(this.config)) {
+    if (!isSonosCard(this.config) && !isMassCard(this.config) ) {
       sections = sections.filter(([section]) => section !== QUEUE);
     }
     sections = sections.filter(([section]) => !this.config.sections || this.config.sections?.includes(section));
