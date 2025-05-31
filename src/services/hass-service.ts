@@ -81,7 +81,17 @@ export default class HassService {
         },
         return_response: true,
       });
-      console.log(JSON.stringify(ret.result.response))
+      const ret1 = await this.hass.callWS<any>({
+        type: 'call_service',
+        domain: 'script',
+        service: 'get_player_queues',
+        target: {
+          entity_id: mediaPlayer.id,
+        },
+        return_response: true,
+      });
+      console.log(JSON.stringify(ret1));
+      console.log(JSON.stringify(ret.result.response));
       const queueItems = ret.result.response[mediaPlayer.id];
       return queueItems.map((item) => {
         return {
