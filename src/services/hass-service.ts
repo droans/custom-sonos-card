@@ -73,7 +73,7 @@ export default class HassService {
   async getQueue(mediaPlayer: MediaPlayer): Promise<MediaPlayerItem[]> {
     try {
       const ret = await this.hass.callWS<GetQueueResponse>({
-        type: 'call_sdervice',
+        type: 'call_service',
         domain: 'script',
         service: 'get_player_queues',
         target: {
