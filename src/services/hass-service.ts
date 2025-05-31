@@ -74,8 +74,8 @@ export default class HassService {
     try {
       const ret = await this.hass.callWS<GetQueueResponse>({
         type: 'call_service',
-        domain: 'sonos',
-        service: 'get_queue',
+        domain: 'script',
+        service: 'get_player_queues',
         target: {
           entity_id: mediaPlayer.id,
         },
