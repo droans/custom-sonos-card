@@ -20,9 +20,9 @@ class Footer extends LitElement {
       [QUEUE, icons?.queue ?? 'mdi:queue-first-in-last-out'],
       [VOLUMES, icons?.volumes ?? 'mdi:tune'],
     ];
-    if (!true ) {
-      sections = sections.filter(([section]) => section !== QUEUE);
-    }
+    // if (!true ) {
+    //   sections = sections.filter(([section]) => section !== QUEUE);
+    // }
     sections = sections.filter(([section]) => !this.config.sections || this.config.sections?.includes(section));
     return html`
       ${sections.map(
