@@ -91,8 +91,8 @@ export default class HassService {
         return_response: true,
       });
       console.log(JSON.stringify(ret1));
-      console.log(JSON.stringify(ret.result.response));
-      const queueItems = ret.result.response[mediaPlayer.id];
+      console.log(JSON.stringify(ret.response));
+      const queueItems = ret.response[mediaPlayer.id];
       return queueItems.map((item) => {
         return {
           title: `${item.media_artist} - ${item.media_title}`,

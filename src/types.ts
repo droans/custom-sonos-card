@@ -192,10 +192,8 @@ export interface HomeAssistantWithEntities extends HomeAssistant {
 }
 
 export type GetQueueResponse = {
-  result: {
-    response: {
-      [entity_id: string]: QueueItem[];
-    };
+  response: {
+    [entity_id: string]: QueueItem[];
   };
 };
 
