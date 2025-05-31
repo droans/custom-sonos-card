@@ -128,7 +128,8 @@ export function entityMatchMxmp(config: CardConfig, entity: HassEntity, hassWith
 }
 
 export function isSonosCard(config: CardConfig) {
-  return config.type.indexOf('sonos') > -1;
+  // return config.type.indexOf('sonos') > -1;
+  return true;
 }
 
 export function isMassCard(config: CardConfig) {
