@@ -81,7 +81,7 @@ export default class HassService {
         },
         return_response: true,
       });
-      console.log(JSON.stringify(ret.response))
+      console.log(JSON.stringify(ret))
       const queueItems = ret.response[mediaPlayer.id];
       return queueItems.map((item) => {
         return {
