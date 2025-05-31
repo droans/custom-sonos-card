@@ -127,9 +127,11 @@ export function entityMatchMxmp(config: CardConfig, entity: HassEntity, hassWith
   return matchesPlatform || includeEntity;
 }
 
+/* eslint-disable no-unused-vars */
 export function isSonosCard(config: CardConfig) {
-  let dummy = config.type.indexOf('sonos') > -1;
-  dummy = dummy;
+/* eslint-enable no-unused-vars */
+  // let dummy = config.type.indexOf('sonos') > -1;
+  // dummy = dummy;
   // return config.type.indexOf('sonos') > -1;
   return true;
 }
