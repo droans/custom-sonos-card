@@ -19,7 +19,8 @@ export class Queue extends LitElement {
 
   render() {
     this.activePlayer = this.store.activePlayer;
-    const selected = this.activePlayer.attributes.queue_position - 1;
+    const selected = 1;
+    // const selected = this.activePlayer.attributes.queue_position - 1;
     return html`${this.renderQueue(selected)}`;
   }
 
