@@ -26,7 +26,7 @@ export class Queue extends LitElement {
 
   private renderQueue(selected: number) {
     this.firstRender = false;
-    return html`
+    const result = html`
       <div class="header">
         <div class="title">
           ${this.store.config.queueTitle ??
@@ -72,6 +72,7 @@ export class Queue extends LitElement {
         </mwc-list>
       </div>
     `;
+    return html;
   }
 
   private onMediaItemSelected = async (index: number) => {
